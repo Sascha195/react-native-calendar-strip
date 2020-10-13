@@ -85,8 +85,6 @@ class CalendarStrip extends Component {
     locale: PropTypes.object,
     shouldAllowFontScaling: PropTypes.bool,
     useNativeDriver: PropTypes.bool,
-    
-    customHeight: PropTypes.number
   };
 
   static defaultProps = {
@@ -356,8 +354,7 @@ class CalendarStrip extends Component {
     let monthFontSize = Math.round(dayComponentWidth / 3.2);
     let selectorSize = Math.round(dayComponentWidth / 2.5);
     let height = showMonth ? monthFontSize : 0;
-    height += showDate ? dayComponentWidth : 0; // assume square element sizes
-    height = customHeight > 0 ? customHeight : height;
+    height += showDate ? 100 : 0; // assume square element sizes
     selectorSize = Math.min(selectorSize, height);
 
     this.setState({
